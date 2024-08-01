@@ -1,13 +1,17 @@
+import React from 'react';
 import Game from '../Game';
 import Header from '../Header';
+import Guesses from '../Guesses';
 
 function App() {
+  const [guesses, setGuesses] = React.useState([]);
   return (
     <div className="wrapper">
       <Header />
 
       <div className="game-wrapper">
-        <Game />
+        <Guesses guesses={guesses}/>
+        <Game guesses={guesses} setGuesses={setGuesses}/>
       </div>
     </div>
   );
