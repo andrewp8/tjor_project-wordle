@@ -11,7 +11,7 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  return <><GuessInput/></>;
+  return <>Put a game here</>;
 }
 
 export default Game;
