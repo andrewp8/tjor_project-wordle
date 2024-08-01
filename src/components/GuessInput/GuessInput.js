@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GuessInput({handleSubmitGuess}) {
+function GuessInput({ handleSubmitGuess, isOver }) {
   const [tentativeGuess, setTentativeGuess] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,11 +14,12 @@ function GuessInput({handleSubmitGuess}) {
         id="guess-input"
         type="text"
         required
+        disabled={isOver}
         minLength={5}
         maxLength={5}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
-        style={{textTransform: "uppercase"}}
+        style={{ textTransform: "uppercase" }}
         onChange={(event) => {
           const nextGuess = event.target.value;
           setTentativeGuess(nextGuess);
