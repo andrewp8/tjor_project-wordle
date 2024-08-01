@@ -5,14 +5,11 @@ import {range} from '../../utils';
 import {NUM_OF_GUESSES_ALLOWED} from '../../constants';
 
 function GuessResults({ guesses }) {
-  console.log("NOG", NUM_OF_GUESSES_ALLOWED);
-  return (
+  return ( 
     <div className="guess-results">
-      {range(NUM_OF_GUESSES_ALLOWED).map((guess, index)=>{
-        <p className="guess">
-          <Guess guess={guess[index]}/>
-        </p>
-      })}
+      {range(NUM_OF_GUESSES_ALLOWED).map((index) =>
+        <Guess key={index} value={guesses[index]}/>
+      )}
     </div>
   );
 }
