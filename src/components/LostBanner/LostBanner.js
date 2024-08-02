@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Banner() {
+function LostBanner() {
   return <div></div>;
 }
 
-export default Banner;
+export default LostBanner;

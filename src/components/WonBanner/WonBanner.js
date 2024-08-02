@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Banner() {
+function WonBanner() {
   return <div></div>;
 }
 
-export default Banner;
+export default WonBanner;
