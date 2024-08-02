@@ -9,6 +9,7 @@ import GuessInput from "../GuessInput";
 import GuessResults from "../GuessResults";
 import WonBanner from "../WonBanner";
 import LostBanner from "../LostBanner";
+import VisualKeyboard from "../VisualKeyboard";
 
 
 // Pick a random word on every pageload.
@@ -20,6 +21,7 @@ function Game() {
   //running || lost || won
   const [gameStatus, setGameStatus] = React.useState("running")
   const [guesses, setGuesses] = React.useState([]);
+  const [guessResults, setGuessResults] = React.useState([])
 
   const handleSubmitGuess = (tentativeGuess) => {
     const nextGuess = [...guesses, tentativeGuess]
@@ -30,12 +32,16 @@ function Game() {
       setGameStatus('won')
     }
   }
+
+  // TODO:
+  //1) pass checkResult to compare each letter and its css style
   return (
     <>
-      <GuessResults guesses={guesses} answer={answer} />
+      <GuessResults guesses={guesses} answer={answer} setGuessResults={setGuessResults} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} gameStatus={gameStatus} />
       {gameStatus === "lost" && <LostBanner answer={answer}/>}
       {gameStatus === "won" && <WonBanner numOfGuesses={guesses.length}/>}
+      <VisualKeyboard guessResults={guessResults}/>
     </>
   );
 }

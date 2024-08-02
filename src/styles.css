@@ -139,6 +139,11 @@ h1 {
   border-color: var(--color-warning);
   color: white;
 }
+.cell.unused {
+  background: var(--color-gray-700);
+  border-color: var(--color-gray-700);
+  color: black;
+}
 
 .guess-input-wrapper {
   display: flex;
