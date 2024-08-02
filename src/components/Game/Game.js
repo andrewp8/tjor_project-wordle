@@ -26,7 +26,7 @@ function Game() {
     setGuesses(nextGuess);
     if(nextGuess.length >= NUM_OF_GUESSES_ALLOWED) {
       setGameStatus('lost')
-    }else if(nextGuess === answer){
+    }else if(tentativeGuess === answer){
       setGameStatus('won')
     }
   }
@@ -34,6 +34,8 @@ function Game() {
     <>
       <GuessResults guesses={guesses} answer={answer} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} gameStatus={gameStatus} />
+      {gameStatus === "lost" && <LostBanner answer={answer}/>}
+      {gameStatus === "won" && <WonBanner numOfGuesses={guesses.length}/>}
     </>
   );
 }

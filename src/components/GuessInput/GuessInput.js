@@ -14,7 +14,7 @@ function GuessInput({ handleSubmitGuess, gameStatus}) {
         id="guess-input"
         type="text"
         required
-        disabled={!gameStatus === 'running'}
+        disabled={gameStatus !== 'running'}
         minLength={5}
         maxLength={5}
         pattern="[a-zA-Z]{5}"
