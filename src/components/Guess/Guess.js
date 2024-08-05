@@ -8,11 +8,8 @@ function Cell({ letter, status }) {
   return <span className={className}>{letter}</span>;
 }
 
-function Guess({ value, answer, setGuessResults }) {
+function Guess({ value, answer }) {
   const result = checkGuess(value, answer);
-  if(result!= null){
-    setGuessResults(result);
-  }
   return (
     <>
       <p className="guess">
